@@ -7,14 +7,15 @@
     tools:context="com.ranjit.drivestructure.MainActivity">
 
     <Button
-        android:onClick="createParent"
+        android:id="@+id/btnDelete"
+        android:onClick="deleteFile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="create folder on root"
+        android:text="Delete File"
         />
 
     <Button
-        android:onClick="createFolderUnderRoot"
+        android:onClick="SelectFile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="create folder on under root"
