@@ -3,19 +3,27 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:orientation="vertical"    android:layout_height="match_parent"
-    tools:context="com.ranjit.drivestructure.MainActivity">
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+>
 
     <Button
         android:id="@+id/btnDelete"
-        android:onClick="deleteFile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Delete File"
         />
 
     <Button
-        android:onClick="SelectFile"
+        android:id="@+id/btnUpload"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="create folder on under root"
+        />
+
+
+    <Button
+        android:id="@+id/btnTest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="create folder on under root"

@@ -46,10 +46,6 @@ import static com.ranjit.drivestructure.MainActivity.typeVdo;
 
 public final class UploadService extends IntentService {
 
-    public static final String TYPE_POST = "POST";
-    public static final String TYPE_GET = "TYPE_GET";
-    public static final String TYPE_UPLOAD = "UPLOAD";
-    public static final String FILE_PATH = "filePath";
     private final String TAG = this.getClass().getSimpleName();
     private static final String MIME_PHOTO = "image/jpeg";
     private static final String MIME_VIDEO = "video/mp4";
@@ -166,7 +162,9 @@ public final class UploadService extends IntentService {
                                     public void onResult(DriveFolder.DriveFolderResult result) {
                                         if (!result.getStatus().isSuccess()) {
                                             Log.i(TAG, "Error while trying to create the folder");
+                                            setError(fileToUpload);
                                             return;
+
                                         }
                                         checkAndCreateChildFolder(result.getDriveFolder().getDriveId(), childFlder, fileToUpload);
                                     }
@@ -274,11 +272,6 @@ public final class UploadService extends IntentService {
                     if (!isFound) {
                         Log.e(TAG, "File not exist in Child");
                         createFileInChildFolder(sFolderId, fileToUpload);
-                    } else {
-                        try {
-                        } finally {
-
-                        }
                     }
                 }
             }

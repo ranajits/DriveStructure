@@ -1,16 +1,11 @@
 package com.ranjit.drivestructure;
 
-import android.app.ActivityManager;
-import android.app.IntentService;
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
-import android.content.IntentFilter;
 import android.content.IntentSender;
 import android.net.Uri;
-import android.os.AsyncTask;
 import android.os.Environment;
-import android.provider.SyncStateContract;
 import android.support.annotation.NonNull;
 import android.support.annotation.Nullable;
 import android.support.v4.content.LocalBroadcastManager;
@@ -23,34 +18,14 @@ import android.widget.Button;
 import com.google.android.gms.common.ConnectionResult;
 import com.google.android.gms.common.GoogleApiAvailability;
 import com.google.android.gms.common.api.GoogleApiClient;
-import com.google.android.gms.common.api.ResultCallback;
 import com.google.android.gms.common.api.ResultCallbacks;
 import com.google.android.gms.common.api.Status;
 import com.google.android.gms.drive.Drive;
-import com.google.android.gms.drive.DriveApi;
 import com.google.android.gms.drive.DriveFile;
-import com.google.android.gms.drive.DriveFolder;
 import com.google.android.gms.drive.DriveId;
-import com.google.android.gms.drive.Metadata;
-import com.google.android.gms.drive.MetadataChangeSet;
-import com.google.android.gms.drive.query.Filters;
-import com.google.android.gms.drive.query.Query;
-import com.google.android.gms.drive.query.SearchableField;
-import java.io.ByteArrayOutputStream;
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.util.ArrayList;
-import java.util.Date;
-import com.google.android.gms.drive.DriveApi.DriveContentsResult;
-import com.google.android.gms.drive.DriveFolder.DriveFileResult;
-import java.io.IOException;
-import java.io.OutputStream;
-
 import com.crashlytics.android.Crashlytics;
-
-import org.json.JSONException;
-
 import io.fabric.sdk.android.Fabric;
 
 
@@ -290,6 +265,7 @@ public class MainActivity extends AppCompatActivity implements GoogleApiClient.C
         };
         UploadService.invoke(ctx, parentFolder, childFlder, fileToUpload, receiver);
     }
+
 
 
 
